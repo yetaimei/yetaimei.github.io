@@ -3,8 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>leilei — iOS apps</title>
-  <meta name="description" content="iOS apps by leilei. MoodFlow, PosterWords, and other apps on the App Store.">
+  <title>leilei — MoodFlow, PosterWords, and other iOS apps</title>
+  <meta name="description" content="Independent iOS developer leilei (雷雷 张). MoodFlow is a mood tracker and emotion diary for iPhone and Apple Watch. PosterWords teaches Mandarin with AI scene poster cards and HSK 3.0.">
+  <link rel="canonical" href="https://yetaimei.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:site_name" content="leilei">
+  <meta property="og:title" content="leilei — MoodFlow, PosterWords, and other iOS apps">
+  <meta property="og:description" content="Independent iOS developer leilei (雷雷 张). MoodFlow is a mood tracker and emotion diary. PosterWords teaches Mandarin with AI poster cards.">
+  <meta property="og:url" content="https://yetaimei.github.io/">
+  <meta property="og:image" content="https://yetaimei.github.io/moodflow-hero.png">
+  <meta property="og:image:alt" content="MoodFlow calendar and daily mood entry on iPhone">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="leilei — MoodFlow, PosterWords, and other iOS apps">
+  <meta name="twitter:description" content="Independent iOS developer leilei. MoodFlow, PosterWords, and other iOS apps.">
+  <meta name="twitter:image" content="https://yetaimei.github.io/moodflow-hero.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://yetaimei.github.io/#website",
+        "url": "https://yetaimei.github.io/",
+        "name": "leilei",
+        "description": "iOS apps by independent developer leilei.",
+        "inLanguage": ["en", "zh"],
+        "publisher": {"@id": "https://yetaimei.github.io/#leilei"}
+      },
+      {
+        "@type": "Person",
+        "@id": "https://yetaimei.github.io/#leilei",
+        "name": "leilei",
+        "alternateName": ["雷雷 张", "yetaimei"],
+        "jobTitle": "Independent iOS developer",
+        "url": "https://yetaimei.github.io/",
+        "sameAs": [
+          "https://github.com/yetaimei",
+          "https://apps.apple.com/us/developer/%E9%9B%B7%E9%9B%B7-%E5%BC%A0/id1803875512"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://yetaimei.github.io/#moodflow",
+        "name": "MoodFlow",
+        "alternateName": "MoodFlow: Mood Tracker Journal",
+        "description": "A mood tracker and emotion diary for iPhone and Apple Watch.",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "iOS",
+        "url": "https://yetaimei.github.io/moodflow-site/",
+        "downloadUrl": "https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705",
+        "image": "https://yetaimei.github.io/moodflow-hero.png",
+        "author": {"@id": "https://yetaimei.github.io/#leilei"},
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "ratingCount": "123",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://yetaimei.github.io/#posterwords",
+        "name": "PosterWords",
+        "alternateName": "PosterWords: Learn Chinese",
+        "description": "Learn Mandarin Chinese through AI scene poster cards and HSK 3.0 vocabulary.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "iOS",
+        "url": "https://posterwords.pages.dev/",
+        "downloadUrl": "https://apps.apple.com/us/app/posterwords-learn-mandarin/id6771689623",
+        "image": "https://yetaimei.github.io/posterwords-mockup.png",
+        "author": {"@id": "https://yetaimei.github.io/#leilei"},
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
@@ -63,6 +148,13 @@
       letter-spacing: 0.01em;
     }
     .tagline .zh { margin-left: 8px; }
+    .about {
+      margin-top: 18px;
+      max-width: 46ch;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .about .zh { display: block; margin-top: 4px; }
 
     .lead, .second {
       padding: 48px 0 8px;
@@ -233,6 +325,7 @@
       <div class="brand">leilei</div>
       <p class="tagline">iOS apps<span class="zh">「独立开发的 iOS 应用」</span></p>
     </div>
+    <p class="wrap about">Independent iOS developer. <span class="zh">独立开发者，做 MoodFlow、PosterWords 和其他 App。</span></p>
   </header>
 
   <main>

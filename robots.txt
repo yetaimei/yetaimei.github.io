@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yetaimei.github.io/sitemap.xml

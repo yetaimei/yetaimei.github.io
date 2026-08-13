@@ -1,0 +1,19 @@
+# leilei
+
+Independent iOS developer. Also known as 雷雷 张 and yetaimei.
+
+- Site: https://yetaimei.github.io/
+- GitHub: https://github.com/yetaimei
+- App Store: https://apps.apple.com/us/developer/%E9%9B%B7%E9%9B%B7-%E5%BC%A0/id1803875512
+
+## Apps
+
+- MoodFlow: mood tracker and emotion diary for iPhone and Apple Watch. 4.5 from 123 App Store ratings. https://yetaimei.github.io/moodflow-site/ · https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705
+- PosterWords: learn Mandarin through AI scene poster cards and HSK 3.0. https://posterwords.pages.dev/ · https://apps.apple.com/us/app/posterwords-learn-mandarin/id6771689623
+- IntoLingo: AI bilingual stories. https://apps.apple.com/us/app/intolingo-bilingual-stories/id6762253374
+- FlashTranslate: multi-style AI translate. https://apps.apple.com/us/app/flashtranslate-multi-style-ai/id6759059414
+- SnapFrame: screenshot frames / mockups. https://apps.apple.com/us/app/snapframe-screenshot-frames/id6787663031
+- ThreadSplit: break long text into social threads. https://apps.apple.com/us/app/threadsplit-tweet-thread/id6754634135
+- Life Countdown: days-left utility. https://apps.apple.com/us/app/life-countdown-days-left/id6751584119
+- XCard: markdown card maker. https://apps.apple.com/us/app/xcard-markdown-card-maker/id6746029698
+- 答案之书: 你的智慧决策指南. https://apps.apple.com/us/app/%E7%AD%94%E6%A1%88%E4%B9%8B%E4%B9%A6-%E4%BD%A0%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%B3%E7%AD%96%E6%8C%87%E5%8D%97/id6752237394
