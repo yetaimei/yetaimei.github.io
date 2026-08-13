@@ -93,21 +93,14 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f6f4f0;
-      --ink: #1c1917;
-      --muted: #6b6560;
-      --line: #e4ddd4;
-      --mood: #f3eef6;
-      --poster: #f8efe8;
-      --radius: 18px;
-      --max: 980px;
-      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
-      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --bg: #f5f5f7;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --line: #d2d2d7;
+      --max: 1080px;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -116,8 +109,8 @@
       font-family: var(--sans);
       background: var(--bg);
       color: var(--ink);
-      line-height: 1.6;
-      font-size: 16px;
+      line-height: 1.47;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
     }
     img { max-width: 100%; height: auto; display: block; }
@@ -125,60 +118,59 @@
     a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
     .wrap {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(var(--max), calc(100% - 48px));
       margin: 0 auto;
     }
 
-    header.site {
-      padding: 28px 0 8px;
-    }
+    header.site { padding: 36px 0 8px; }
     .brand-row {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       gap: 16px;
-      flex-wrap: wrap;
     }
     .brand {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.022em;
     }
     .tagline {
       color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.01em;
+      font-size: 12px;
+      letter-spacing: 0.02em;
     }
     .tagline .zh { margin-left: 8px; }
     .about {
-      margin-top: 18px;
-      max-width: 46ch;
+      margin-top: 28px;
+      max-width: 22em;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: -0.011em;
     }
-    .about .zh { display: block; margin-top: 4px; }
+    .about .zh { display: block; margin-top: 6px; font-size: 15px; }
 
-    .lead, .second {
-      padding: 48px 0 8px;
-    }
+    .lead { padding: 72px 0 24px; }
+    .second { padding: 96px 0 24px; }
     .product {
       display: grid;
-      gap: 32px;
+      gap: 40px;
       align-items: center;
     }
     h1, h2 {
-      font-family: var(--serif);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.07;
     }
-    h1 { font-size: clamp(36px, 7vw, 56px); }
-    h2 { font-size: clamp(30px, 6vw, 44px); }
+    h1 { font-size: clamp(40px, 7vw, 64px); }
+    h2 { font-size: clamp(36px, 6vw, 56px); }
     .one-line {
-      margin-top: 14px;
-      font-size: 18px;
-      max-width: 28ch;
+      margin-top: 16px;
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: -0.011em;
+      max-width: 18em;
+      color: var(--ink);
     }
     .zh-line {
       margin-top: 6px;
@@ -195,100 +187,76 @@
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
+      gap: 12px;
+      margin-top: 28px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
+      min-width: 128px;
+      padding: 11px 20px;
+      border-radius: 980px;
+      font-size: 15px;
+      font-weight: 500;
       text-decoration: none;
-      border: 1px solid var(--ink);
-      transition: background .15s ease, color .15s ease;
+      border: none;
+      transition: opacity .15s ease;
     }
-    .btn-solid {
-      background: var(--ink);
-      color: #faf7f2;
-    }
-    .btn-solid:hover { background: #111; }
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink);
-    }
-    .btn-ghost:hover { background: rgba(28,25,23,.05); }
+    .btn:hover { opacity: 0.82; }
+    .btn-solid { background: #1d1d1f; color: #fff; }
+    .btn-ghost { background: #e8e8ed; color: #1d1d1f; }
 
     .shot {
-      background: var(--mood);
-      border-radius: var(--radius);
-      padding: 22px 18px 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
+      background: none;
+      border: none;
+      padding: 0;
+      overflow: visible;
     }
     .shot img {
-      width: min(280px, 72%);
+      width: min(300px, 68%);
       margin: 0 auto;
-      border-radius: 22px 22px 0 0;
-      box-shadow: 0 18px 40px rgba(48, 32, 64, 0.12);
+      border-radius: 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
     }
-    .shot.poster {
-      background: var(--poster);
-    }
-    .shot.poster img {
-      width: min(300px, 86%);
-      border-radius: 16px 16px 0 0;
-      box-shadow: 0 16px 36px rgba(80, 40, 16, 0.12);
-    }
+    .shot.poster img { width: min(300px, 68%); }
 
-    .also {
-      padding: 56px 0 24px;
-    }
+    .also { padding: 88px 0 32px; }
     .also h3 {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 500;
+      font-size: 28px;
+      font-weight: 600;
       letter-spacing: -0.02em;
     }
-    .also .zh-line { margin-bottom: 18px; }
+    .also .zh-line { margin-bottom: 8px; }
     .store-list {
       list-style: none;
-      border-top: 1px solid var(--line);
+      margin-top: 28px;
     }
-    .store-list li {
-      border-bottom: 1px solid var(--line);
-    }
+    .store-list li + li { border-top: 1px solid var(--line); }
     .store-list a {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 8px 20px;
+      gap: 4px 20px;
       align-items: baseline;
-      padding: 14px 2px;
+      padding: 18px 0;
       text-decoration: none;
     }
-    .store-list a:hover .name { text-decoration: underline; text-underline-offset: 3px; }
-    .name {
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-    .blurb {
-      color: var(--muted);
-      font-size: 14px;
-    }
+    .store-list a:hover .name { color: #06c; }
+    .name { font-weight: 600; letter-spacing: -0.015em; }
+    .blurb { color: var(--muted); font-size: 14px; }
     .go {
       grid-column: 2;
       grid-row: 1 / span 2;
       align-self: center;
-      font-size: 13px;
-      color: var(--muted);
+      font-size: 14px;
+      color: #06c;
       white-space: nowrap;
     }
 
     footer.site {
-      padding: 40px 0 48px;
+      padding: 48px 0 64px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
     }
     footer.site a { text-decoration: none; }
     footer.site a:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -297,26 +265,24 @@
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
-      padding-top: 18px;
+      padding-top: 20px;
       border-top: 1px solid var(--line);
     }
 
-    @media (min-width: 800px) {
-      header.site { padding-top: 40px; }
-      .lead { padding-top: 72px; }
-      .second { padding-top: 80px; }
+    @media (min-width: 860px) {
+      header.site { padding-top: 48px; }
+      .lead { padding-top: 96px; }
+      .second { padding-top: 120px; }
       .product {
-        grid-template-columns: 1fr 0.92fr;
-        gap: 56px;
+        grid-template-columns: 1fr 0.86fr;
+        gap: 72px;
       }
-      .second .product { grid-template-columns: 0.92fr 1fr; }
+      .second .product { grid-template-columns: 0.86fr 1fr; }
       .second .copy { order: 2; }
-      .one-line { font-size: 20px; }
-      .shot { padding: 36px 28px 0; }
-      .also { padding-top: 88px; }
-      .store-list a {
-        grid-template-columns: 180px 1fr auto;
-      }
+      .one-line { font-size: 24px; }
+      .shot img, .shot.poster img { width: min(340px, 100%); }
+      .also { padding-top: 120px; }
+      .store-list a { grid-template-columns: 200px 1fr auto; }
       .blurb { grid-column: 2; grid-row: 1; }
       .go { grid-column: 3; grid-row: 1; }
     }
