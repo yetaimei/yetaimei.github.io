@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>leilei — iOS apps</title>
+  <meta name="description" content="iOS apps by leilei. MoodFlow, PosterWords, and other apps on the App Store.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f4f0;
+      --ink: #1c1917;
+      --muted: #6b6560;
+      --line: #e4ddd4;
+      --mood: #f3eef6;
+      --poster: #f8efe8;
+      --radius: 18px;
+      --max: 980px;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header.site {
+      padding: 28px 0 8px;
+    }
+    .brand-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.01em;
+    }
+    .tagline .zh { margin-left: 8px; }
+
+    .lead, .second {
+      padding: 48px 0 8px;
+    }
+    .product {
+      display: grid;
+      gap: 32px;
+      align-items: center;
+    }
+    h1, h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    h1 { font-size: clamp(36px, 7vw, 56px); }
+    h2 { font-size: clamp(30px, 6vw, 44px); }
+    .one-line {
+      margin-top: 14px;
+      font-size: 18px;
+      max-width: 28ch;
+    }
+    .zh-line {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .proof {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .proof strong { color: var(--ink); font-weight: 600; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      transition: background .15s ease, color .15s ease;
+    }
+    .btn-solid {
+      background: var(--ink);
+      color: #faf7f2;
+    }
+    .btn-solid:hover { background: #111; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn-ghost:hover { background: rgba(28,25,23,.05); }
+
+    .shot {
+      background: var(--mood);
+      border-radius: var(--radius);
+      padding: 22px 18px 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .shot img {
+      width: min(280px, 72%);
+      margin: 0 auto;
+      border-radius: 22px 22px 0 0;
+      box-shadow: 0 18px 40px rgba(48, 32, 64, 0.12);
+    }
+    .shot.poster {
+      background: var(--poster);
+    }
+    .shot.poster img {
+      width: min(300px, 86%);
+      border-radius: 16px 16px 0 0;
+      box-shadow: 0 16px 36px rgba(80, 40, 16, 0.12);
+    }
+
+    .also {
+      padding: 56px 0 24px;
+    }
+    .also h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .also .zh-line { margin-bottom: 18px; }
+    .store-list {
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+    .store-list li {
+      border-bottom: 1px solid var(--line);
+    }
+    .store-list a {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px 20px;
+      align-items: baseline;
+      padding: 14px 2px;
+      text-decoration: none;
+    }
+    .store-list a:hover .name { text-decoration: underline; text-underline-offset: 3px; }
+    .name {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .blurb {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .go {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: center;
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    footer.site {
+      padding: 40px 0 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer.site a { text-decoration: none; }
+    footer.site a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .foot-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (min-width: 800px) {
+      header.site { padding-top: 40px; }
+      .lead { padding-top: 72px; }
+      .second { padding-top: 80px; }
+      .product {
+        grid-template-columns: 1fr 0.92fr;
+        gap: 56px;
+      }
+      .second .product { grid-template-columns: 0.92fr 1fr; }
+      .second .copy { order: 2; }
+      .one-line { font-size: 20px; }
+      .shot { padding: 36px 28px 0; }
+      .also { padding-top: 88px; }
+      .store-list a {
+        grid-template-columns: 180px 1fr auto;
+      }
+      .blurb { grid-column: 2; grid-row: 1; }
+      .go { grid-column: 3; grid-row: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap brand-row">
+      <div class="brand">leilei</div>
+      <p class="tagline">iOS apps<span class="zh">「独立开发的 iOS 应用」</span></p>
+    </div>
+  </header>
+
+  <main>
+    <section class="lead" aria-labelledby="moodflow">
+      <div class="wrap product">
+        <div class="copy">
+          <h1 id="moodflow">MoodFlow</h1>
+          <p class="one-line">Mood tracker &amp; emotion diary for iPhone and Apple Watch.</p>
+          <p class="zh-line">情绪日记，iPhone 和 Apple Watch</p>
+          <p class="proof"><strong>4.5</strong> from 123 ratings on the App Store</p>
+          <div class="links">
+            <a class="btn btn-solid" href="https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705">App Store</a>
+            <a class="btn btn-ghost" href="https://yetaimei.github.io/moodflow-site/">Website</a>
+          </div>
+        </div>
+        <figure class="shot">
+          <img src="moodflow-hero.png" alt="MoodFlow calendar and daily mood entry on iPhone" width="280" height="604">
+        </figure>
+      </div>
+    </section>
+
+    <section class="second" aria-labelledby="posterwords">
+      <div class="wrap product">
+        <div class="copy">
+          <h2 id="posterwords">PosterWords</h2>
+          <p class="one-line">Learn Mandarin through AI scene poster cards + HSK 3.0.</p>
+          <p class="zh-line">用海报卡片学中文</p>
+          <div class="links">
+            <a class="btn btn-solid" href="https://apps.apple.com/us/app/posterwords-learn-mandarin/id6771689623">App Store</a>
+            <a class="btn btn-ghost" href="https://posterwords.pages.dev/">Website</a>
+          </div>
+        </div>
+        <figure class="shot poster">
+          <img src="posterwords-mockup.png" alt="PosterWords iPhone screen with scene-based Mandarin poster cards" width="300" height="520">
+        </figure>
+      </div>
+    </section>
+
+    <section class="also" aria-labelledby="also-store">
+      <div class="wrap">
+        <h3 id="also-store">Also on the App Store</h3>
+        <p class="zh-line">也在 App Store</p>
+        <ul class="store-list">
+          <li>
+            <a href="https://apps.apple.com/us/app/intolingo-bilingual-stories/id6762253374">
+              <span class="name">IntoLingo</span>
+              <span class="blurb">AI bilingual stories</span>
+              <span class="go">App Store</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://apps.apple.com/us/app/flashtranslate-multi-style-ai/id6759059414">
+              <span class="name">FlashTranslate</span>
+              <span class="blurb">Multi-style AI translate</span>
+              <span class="go">App Store</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://apps.apple.com/us/app/snapframe-screenshot-frames/id6787663031">
+              <span class="name">SnapFrame</span>
+              <span class="blurb">Screenshot frames / mockups</span>
+              <span class="go">App Store</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://apps.apple.com/us/app/threadsplit-tweet-thread/id6754634135">
+              <span class="name">ThreadSplit</span>
+              <span class="blurb">Break long text into social threads</span>
+              <span class="go">App Store</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://apps.apple.com/us/app/life-countdown-days-left/id6751584119">
+              <span class="name">Life Countdown</span>
+              <span class="blurb">Days-left utility</span>
+              <span class="go">App Store</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://apps.apple.com/us/app/xcard-markdown-card-maker/id6746029698">
+              <span class="name">XCard</span>
+              <span class="blurb">Markdown card maker</span>
+              <span class="go">App Store</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://apps.apple.com/us/app/%E7%AD%94%E6%A1%88%E4%B9%8B%E4%B9%A6-%E4%BD%A0%E7%9A%84%E6%99%BA%E6%85%A7%E5%86%B3%E7%AD%96%E6%8C%87%E5%8D%97/id6752237394">
+              <span class="name">答案之书</span>
+              <span class="blurb">你的智慧决策指南</span>
+              <span class="go">App Store</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap foot-row">
+      <p>© leilei</p>
+      <p><a href="https://apps.apple.com/us/developer/%E9%9B%B7%E9%9B%B7-%E5%BC%A0/id1803875512">App Store developer page</a></p>
+    </div>
+  </footer>
+</body>
+</html>
