@@ -82,7 +82,7 @@
         "operatingSystem": "iOS",
         "url": "https://posterwords.pages.dev/",
         "downloadUrl": "https://apps.apple.com/us/app/posterwords-learn-mandarin/id6771689623",
-        "image": "https://yetaimei.github.io/posterwords-mockup.png",
+        "image": ["https://yetaimei.github.io/posterwords-2.jpg", "https://yetaimei.github.io/posterwords-1.jpg"],
         "author": {"@id": "https://yetaimei.github.io/#leilei"},
         "offers": {
           "@type": "Offer",
@@ -325,10 +325,19 @@
     .shot img {
       width: min(300px, 68%);
       margin: 0 auto;
-      border-radius: 32px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+      border-radius: 0;
+      box-shadow: none;
     }
-    .shot.poster img { width: min(300px, 68%); }
+    .shot.pair {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 12px;
+    }
+    .shot.pair img {
+      width: min(210px, 46%);
+      margin: 0;
+    }
 
     .also { padding: 88px 0 32px; }
     .also h3 {
@@ -389,7 +398,8 @@
       .second .product { grid-template-columns: 0.86fr 1fr; }
       .second .copy { order: 2; }
       .one-line { font-size: 24px; }
-      .shot img, .shot.poster img { width: min(340px, 100%); }
+      .shot img { width: min(340px, 100%); }
+      .shot.pair img { width: min(240px, 48%); }
       .also { padding-top: 120px; }
       .store-list a { grid-template-columns: 200px 1fr auto; }
       .blurb { grid-column: 2; grid-row: 1; }
@@ -436,8 +446,9 @@
             <a class="btn btn-ghost" href="https://posterwords.pages.dev/">Website</a>
           </div>
         </div>
-        <figure class="shot poster">
-          <img src="posterwords-mockup.png" alt="PosterWords iPhone screen with scene-based Mandarin poster cards" width="300" height="520">
+        <figure class="shot pair">
+          <img src="posterwords-2.jpg" alt="PosterWords Scenes: AI creates practice from a topic" width="270" height="480">
+          <img src="posterwords-1.jpg" alt="PosterWords review: Still up? 515 words to review today" width="270" height="480">
         </figure>
       </div>
     </section>
