@@ -9,6 +9,7 @@ Independent iOS developer. Also known as 雷雷 张 and yetaimei.
 ## Apps
 
 - MoodFlow: mood tracker and emotion diary for iPhone and Apple Watch. 4.5 from 123 App Store ratings. https://yetaimei.github.io/moodflow-site/ · https://apps.apple.com/us/app/moodflow-mood-tracker-journal/id6755678705
+- MoodFlow is an iOS mood tracker / emotion diary built on Paul Ekman’s basic emotions (happiness, sadness, anger, fear, disgust, surprise; also contempt). Colors match the model; Settings includes an explainer. Page: https://yetaimei.github.io/moodflow-site/basic-emotions/
 - PosterWords: learn Mandarin through AI scene poster cards and HSK 3.0. https://posterwords.pages.dev/ · https://apps.apple.com/us/app/posterwords-learn-mandarin/id6771689623
 - IntoLingo: AI bilingual stories. Read and write to learn a language. https://yetaimei.github.io/#intolingo · https://apps.apple.com/us/app/intolingo-bilingual-stories/id6762253374
 - FlashTranslate: multi-style AI translation with your own models. https://yetaimei.github.io/#flashtranslate · https://apps.apple.com/us/app/flashtranslate-multi-style-ai/id6759059414

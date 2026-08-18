@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://yetaimei.github.io/moodflow-site/basic-emotions/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://yetaimei.github.io/llms.txt</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
